@@ -4,17 +4,17 @@
   <%#= devise_error_messages! %>
 
   <div class="field input-user">
-    <%= f.label :name, 'Nombre del comercio' %><br />
+    <%= f.label :name, 'Nombre del comercio' %>
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field input-user">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field input-user">
-    <%= f.label :item, "Rubro" %><br />
+    <%= f.label :item, "Rubro" %>
     <%= f.select :item, options_for_select([["Gastronomia", "Gastronomia"], ["Hoteleria", "Hoteleria"],  ["Kioscos", "Kioscos"],  ["Shoppings", "Shoppings"], ["Moda", "Moda"],  ["Otro", "Otro"]]) %>
   </div>
 
@@ -23,12 +23,12 @@
     <%= f.label :password, 'Contraseña' %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> caracteres mínimos)</em>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field input-user">
-    <%= f.label :password_confirmation, 'Confirmar contraseña' %><br />
+    <%= f.label :password_confirmation, 'Confirmar contraseña' %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
