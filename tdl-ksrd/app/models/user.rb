@@ -1,15 +1,18 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
+
+  include BCrypt
+
+  has_secure_password
 
   before_save { self.email = email.downcase }
 
   validates :name, :presence => true,
             :length => { :maximum => 40 }
 
-  validates :email, :presence => true
+  validates :email, :presence => true, uniqueness: { case_sensitive: false }
 
-  validates :password, :presence => true,
-            :length => { :within => 2..50 },
-            confirmation: true
-   validates_confirmation_of :password
+  validates :password, :length => { :within => 6..50 }
 
 end

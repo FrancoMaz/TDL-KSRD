@@ -1,6 +1,16 @@
-<h2>Registrarse</h2>
+<h1>Registrarse</h1>
 
-<%= form_for :post, :url => { :action => :create } do |f| %>
+<%= form_for :user, :url => { :action => :create }, :id => @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h3>Invalid information</h3>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="field input-user">
     <%= f.label :name, 'Nombre' %>

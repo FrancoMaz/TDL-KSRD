@@ -62,7 +62,7 @@ Rails.application.routes.draw do
 
   post "/login" => "login#create"
 
-  get "/register", to: "registration#registration"
+  get "/register", to: "registration#new"
 
   post "/register" => "registration#create"
 
