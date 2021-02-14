@@ -1,10 +1,9 @@
 <h2>Registrarse</h2>
 
-<%= form_for :post do |f| %>
-  <%#= devise_error_messages! %>
+<%= form_for :post, :url => { :action => :create } do |f| %>
 
   <div class="field input-user">
-    <%= f.label :name, 'Nombre del comercio' %>
+    <%= f.label :name, 'Nombre' %>
     <%= f.text_field :name, autofocus: true %>
   </div>
 
@@ -14,8 +13,8 @@
   </div>
 
   <div class="field input-user">
-    <%= f.label :item, "Rubro" %>
-    <%= f.select :item, options_for_select([["Gastronomia", "Gastronomia"], ["Hoteleria", "Hoteleria"],  ["Kioscos", "Kioscos"],  ["Shoppings", "Shoppings"], ["Moda", "Moda"],  ["Otro", "Otro"]]) %>
+    <%= f.label :rubro, "Rubro" %>
+    <%= f.select :rubro, options_for_select([["Gastronomia", "Gastronomia"], ["Hoteleria", "Hoteleria"],  ["Kioscos", "Kioscos"],  ["Shoppings", "Shoppings"], ["Moda", "Moda"],  ["Otro", "Otro"]]) %>
   </div>
 
 

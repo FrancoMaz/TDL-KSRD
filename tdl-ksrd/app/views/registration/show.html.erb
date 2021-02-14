@@ -1,0 +1,15 @@
+<h2>Datos del usuario</h2>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @post.email %>
+</p>
+
+<div class="option-menu">
+  <%= link_to 'Inicio', {controller: 'main', action: 'index'}, :class => 'main-btn btn' %>
+</div>

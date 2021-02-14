@@ -1,0 +1,17 @@
+<h3>Login:</h3>
+<%= form_for :post, :url => { :action => :create } do |f| %>
+
+  <div class="field input-user">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field input-user">
+    <%= f.label :password, 'Contraseña' %>
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions register">
+    <%= f.submit "Login" %>
+  </div>
+<% end %>
