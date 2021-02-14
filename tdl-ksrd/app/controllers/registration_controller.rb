@@ -3,6 +3,10 @@ class RegistrationController < ApplicationController
     'registration'
   end
 
+  def new
+    @user = User.new
+  end
+  
   def create
     @user = User.new({:name => params[:post][:name], :email => params[:post][:email], :rubro => params[:post][:rubro], :password => params[:post][:password]})
     if @user.save
