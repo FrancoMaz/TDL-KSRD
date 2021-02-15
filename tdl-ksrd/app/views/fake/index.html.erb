@@ -1,0 +1,9 @@
+<h2 class="menu-title"><p>Bienvenido: </p><%= @user.name %></h2>
+
+<div class="main-options">
+  <div class="option-menu"><p>Ver comentarios</p></div>
+</div>
+
+<div class="option-menu">
+  <%= button_to 'Log out', {controller: 'login', action: "destroy"}, method: "delete", :class => 'main-btn btn' %>
+</div>

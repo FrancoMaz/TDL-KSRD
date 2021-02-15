@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'main/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -58,13 +59,20 @@ Rails.application.routes.draw do
 
   get "/", to: "main#index"
 
-  get "/login" => "login#index"
+  get "/login" => "login#new"
 
   post "/login" => "login#create"
+
+  delete "/login", to: "login#destroy"
+
+  get "/login/:id" => "login#show"
 
   get "/register", to: "registration#new"
 
   post "/register" => "registration#create"
 
   get "/register/:id" => "registration#show"
+
+  get "/fake" => "fake#index"
+
 end
