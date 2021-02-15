@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'home/show'
 
+  get 'rate/show'
+
   get 'main/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
