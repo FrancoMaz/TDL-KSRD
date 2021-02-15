@@ -8,7 +8,7 @@ class LoginController < ApplicationController
 
     if @user.present? && @user.authenticate(user_params[:password])
       cookies.permanent.signed[:user_id] = @user.id
-      redirect_to fake_url
+      redirect_to home_url
     else
       @user.errors.add(:email, "Combination email/password is not valid")
       render :new

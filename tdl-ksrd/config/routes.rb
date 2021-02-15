@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/show'
 
   get 'main/index'
 
@@ -73,6 +74,5 @@ Rails.application.routes.draw do
 
   get "/register/:id" => "registration#show"
 
-  get "/fake" => "fake#index"
-
+  get "/home" => "home#show"
 end
