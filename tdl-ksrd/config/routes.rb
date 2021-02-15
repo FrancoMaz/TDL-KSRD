@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/show'
+
   get 'main/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -67,4 +69,6 @@ Rails.application.routes.draw do
   post "/register" => "registration#create"
 
   get "/register/:id" => "registration#show"
+
+  get "/home" => "home#show"
 end

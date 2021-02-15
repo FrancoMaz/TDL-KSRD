@@ -3,6 +3,7 @@ class LoginController < ApplicationController
   end
 
   def create
-    render :text => params[:post].inspect
+    /render :text => params[:post].inspect/
+    redirect_to :controller => 'home', :action => 'show'
   end
 end
