@@ -60,9 +60,13 @@ Rails.application.routes.draw do
 
   get "/", to: "main#index"
 
-  get "/login" => "login#index"
+  get "/login" => "login#new"
 
   post "/login" => "login#create"
+
+  delete "/login", to: "login#destroy"
+
+  get "/login/:id" => "login#show"
 
   get "/register", to: "registration#new"
 

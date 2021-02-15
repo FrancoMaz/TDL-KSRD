@@ -1,3 +1,5 @@
+<h2 class="menu-title"><p>Bienvenido: </p><%= @user.name %></h2>
+
 <div class="main-options">
   <button class="option-menu">Ver comentarios</button>
 
@@ -5,4 +7,8 @@
   <div class="thumbnail">
     <img src="https://api.qrserver.com/v1/create-qr-code/?data=<%= @user_url %>" alt="Código QR" title=""/>
   </div>
+</div>
+
+<div class="option-menu">
+  <%= button_to 'Log out', {controller: 'login', action: "destroy"}, method: "delete", :class => 'btn btn-primary' %>
 </div>

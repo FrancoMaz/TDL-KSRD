@@ -1,6 +1,15 @@
 <h3>Login:</h3>
-<%= form_for :post, :url => { :action => :create } do |f| %>
-
+<%= form_for :user, :url => { :action => :create } do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h3>Invalid information</h3>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="field input-user">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
