@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments_shop/show'
+
   get 'home/show'
 
   get 'rate/show'
@@ -83,5 +85,7 @@ Rails.application.routes.draw do
   post "/comments" => "comments#create"
 
   get "/comments/success" => "comments#comment_success"
-  #get "comment_error"
+
+  get "/comments_shop/show" => "comments_shop#show"
+
 end

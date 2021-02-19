@@ -1,7 +1,7 @@
 <h2 class="menu-title"><p>Bienvenido: </p><%= @user.name %></h2>
 
 <div class="main-options">
-  <button class="option-menu">Ver comentarios</button>
+  <%= button_to 'Ver comentarios', {controller: 'comments_shop', action: "show"}, :method => "get", :class => 'option-menu' %>
 
   <h3>Escaneá este código y dejanos tu feedback:</h3>
   <div class="thumbnail">

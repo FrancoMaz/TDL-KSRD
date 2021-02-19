@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   before_create :add_hash_for_url
 
+  has_many :comments
+
   validates :name, :presence => true,
             :length => { :maximum => 40 }
 
