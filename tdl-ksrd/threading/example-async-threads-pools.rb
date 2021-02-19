@@ -9,22 +9,22 @@ POOL_SIZE = 10
 # access it at the same time, it will maintain consistency
 jobs = Queue.new
 
-puts Benchmark.measure{
-  10_000.times{|i| jobs.push 30}
-}
+10_000.times{|i| jobs.push 30}
 
+puts Benchmark.measure{
 # Transform an array of 10 numbers into an array of workers
-workers = (POOL_SIZE).times.map do
-  Thread.new do
-    begin
-      while x = jobs.pop(true)
-        FibHelper.fib(x)
+  workers = (POOL_SIZE).times.map do
+    Thread.new do
+      begin
+        while x = jobs.pop(true)
+          FibHelper.fib(x)
+        end
+      rescue ThreadError
       end
-    rescue ThreadError
     end
   end
-end
 
-workers.map(&:join)
+  workers.map(&:join)
+}
 
-# Termina de forma correcta
+# 843.015506   0.344174 843.359680 (843.201630)
