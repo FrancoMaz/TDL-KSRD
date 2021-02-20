@@ -3,6 +3,6 @@ class HomeController < ApplicationController
 
   def show
     @user = current_user
-    @user_url = Sysrandom.hex(32)
+    @user_url = url_for controller: 'comments', action: 'new', shop: @user.hash_for_url
   end
 end

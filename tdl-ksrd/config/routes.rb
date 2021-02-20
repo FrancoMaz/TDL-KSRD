@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments_shop/show'
+
   get 'home/show'
 
   get 'rate/show'
@@ -77,4 +79,13 @@ Rails.application.routes.draw do
   get "/register/:id" => "registration#show"
 
   get "/home" => "home#show"
+
+  get "/comments/new" => "comments#new"
+
+  post "/comments" => "comments#create"
+
+  get "/comments/success" => "comments#comment_success"
+
+  get "/comments_shop/show" => "comments_shop#show"
+
 end
