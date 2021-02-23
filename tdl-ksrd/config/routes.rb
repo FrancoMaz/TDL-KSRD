@@ -70,8 +70,6 @@ Rails.application.routes.draw do
 
   delete "/login", to: "login#destroy"
 
-  get "/login/:id" => "login#show"
-
   get "/register", to: "registration#new"
 
   post "/register" => "registration#create"
