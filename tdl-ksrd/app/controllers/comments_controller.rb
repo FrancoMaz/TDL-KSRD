@@ -1,6 +1,5 @@
 
 class CommentsController < ApplicationController
-  #before_action :authenticate_user!,  :except => [:new, :create, :comment_success, :new_whit_shop_name, :comment_error]
 
   # GET /comments
   def index
@@ -32,8 +31,6 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        #send_notification_to(@comment.user_id, @comment)
-
         flash[:success] = "Recibimos tu comentario. ¡Gracias!"
         format.html { redirect_to action: 'comment_success'}
       else

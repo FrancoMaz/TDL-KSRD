@@ -42,12 +42,3 @@
     </div>
   </div>
 </div>
-<%= javascript_tag do %>
-  $(document).ready(function() {
-  var inputRatingSelector = $('#comment_rating');
-  inputRatingSelector.val(1);
-  $('.ui.rating').rating('setting', 'onRate', function(value) {
-  inputRatingSelector.val(value);
-  });
-  });
-<% end %>
